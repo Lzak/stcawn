@@ -1,0 +1,8 @@
+as/astro-ph/5 astro-ph  luminosity 1  function 1  globular 1  clusters 1  extragalactic 1
+as/astro-ph/6 astro-ph  asymmetry 1  microlensing 1  induced 1  light 1  curves 1
+as/astro-ph/7 astro-ph  tully 1  fisher 1  relation 1  galaxies 1
+as/astro-ph/8 astro-ph  microlensing 1  complete 1  set 1  solutions 1  caustic 1  crossing 1  binary 1
+as/astro-ph/9 astro-ph  galaxies 1  young 1  red 1  spheroidal 1  hubble 1  deep 1  fields 1  evidence 1
+as/astro-ph/10 astro-ph  precise 1  radial 1  velocities 1  proxima 1  centauri 1
+
+ 
