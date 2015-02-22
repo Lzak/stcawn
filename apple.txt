@@ -1,0 +1,43 @@
+
+Hyponyms of noun apple
+
+1 of 2 senses of apple                                                  
+
+Sense 1
+apple
+       => crab apple, crabapple
+       => eating apple, dessert apple
+       => cooking apple
+
+Hyponyms of noun apple
+
+1 of 2 senses of apple                                                  
+
+Sense 1
+apple
+       => crab apple, crabapple
+       => eating apple, dessert apple
+           => Baldwin
+           => Cortland
+           => Delicious
+               => Golden Delicious, Yellow Delicious
+               => Red Delicious
+           => Empire
+           => Grimes' golden
+           => Jonathan
+           => McIntosh
+               => Macoun
+           => Northern Spy
+           => Pearmain
+           => Pippin
+               => Cox's Orange Pippin
+           => Prima
+           => Stayman
+           => Winesap
+           => Stayman Winesap
+           => Granny Smith
+       => cooking apple
+           => Bramley's Seedling
+           => Lane's Prince Albert
+           => Newtown Wonder
+           => Rome Beauty

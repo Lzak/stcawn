@@ -13,51 +13,61 @@ Author: Lasha Zakariashvili
 * result in a strengthening of our known data set.
 */
 
-
+//includes needed to compile on UNIX: cstdlib, cstring.
 #include <iostream>
 #include <string>
-#include "porter2_stemmer.h"
+#include <fstream>
+#include <vector>
+//#include "porter2_stemmer.h"
 
-using std::string;
-using std::cout;
+using namespace std;
 
 int main() {
-	//Porter2Stemmer::stem(word);
+	ifstream input;									//Will be used for opening the WN output file
+	ofstream output;
+	vector<string> Filtered_WN_Words;				//Will be used for storing filtered WN output words
+	char word[32];									//Array to store user's word
+	char cmd[128] = "wn ";							//Array to store UNIX command
+
+
+
+	/*cout << "Please enter a word: ";
+	cin >> word;									//Retrieving word to use on WordNet
+	strcat(cmd, word);
+	strcat(cmd, " -grepn > WordNetOutput.txt");	
+	cout << "Alright, processing word...\n";
+	system(cmd);									//Calling WN command in UNIX*/
+
+
+
+	//--Stripping WordNetOutput.txt to a list of words---
+	input.open("WordNetOutput.txt");
+	string tmp;
+
+	getline(input, tmp, '\n');
+	getline(input, tmp, '\n');
+	while (!input.eof()) {
+		getline(input, tmp);
+		Filtered_WN_Words.push_back(tmp);
+	}
+	input.close();
+	output.open("WordNetOutput.txt");
+	for (vector<string>::const_iterator i = Filtered_WN_Words.begin(); i != Filtered_WN_Words.end(); i++) {
+		output << *i << '\n';
+	}
+	output.close();
+	while (Filtered_WN_Words.size() != 0) {
+		Filtered_WN_Words.pop_back();
+	}
+	//---------------------------------------------------
+
+
+
+
+
+	//Apply Stemmer here??
+
+
 	system("pause");
 	return 0;
 }
-
-/*
-cout<<"searchtype is at least one of the following:"<<endl;
-cout<<"\t-ants{n|v|a|r}          Antonyms"<<endl;
-cout<<"\t-hype{n|v}              Hypernyms"<<endl;
-cout<<"\t-hypo{n|v}, -tree{n|v}  Hyponyms & Hyponym Tree"<<endl;
-cout<<"\t-entav                  Verb Entailment"<<endl;
-cout<<"\t-syns{n|v|a|r}          Synonyms (ordered by estimated frequency)"<<endl;
-cout<<"\t-smemn                  Member of Holonyms"<<endl;
-cout<<"\t-ssubn                  Substance of Holonyms"<<endl;
-cout<<"\t-sprtn                  Part of Holonyms"<<endl;
-cout<<"\t-membn                  Has Member Meronyms"<<endl;
-cout<<"\t-subsn                  Has Substance Meronyms"<<endl;
-cout<<"\t-partn                  Has Part Meronyms"<<endl;
-cout<<"\t-meron                  All Meronyms"<<endl;
-cout<<"\t-holon                  All Holonyms"<<endl;
-cout<<"\t-causv                  Cause to"<<endl;
-cout<<"\t-pert{a|r}              Pertainyms"<<endl;
-cout<<"\t-attr{n|a}              Attributes"<<endl;
-cout<<"\t-deri{n|v}              Derived Forms"<<endl;
-cout<<"\t-domn{n|v|a|r}          Domain"<<endl;
-cout<<"\t-domt{n|v|a|r}          Domain Terms"<<endl;
-cout<<"\t-faml{n|v|a|r}          Familiarity & Polysemy Count"<<endl;
-cout<<"\t-framv                  Verb Frames"<<endl;
-cout<<"\t-coor{n|v}              Coordinate Terms (sisters)"<<endl;
-cout<<"\t-simsv                  Synonyms (grouped by similarity of meaning)"<<endl;
-cout<<"\t-hmern                  Hierarchical Meronyms"<<endl;
-cout<<"\t-hholn                  Hierarchical Holonyms"<<endl;
-cout<<"\t-grep{n|v|a|r}          List of Compound Words"<<endl;
-cout<<"\t-over                   Overview of Senses"<<endl<<endl;
-
-cout<<"Enter desired searchtype from list of commands: ";
-cin.getline(searchType,100);
-
-*/
