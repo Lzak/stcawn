@@ -79,7 +79,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="menu.cpp" />
     <ClCompile Include="porter2_stemmer.cpp" />
-    <ClCompile Include="WordNetOutputStripper.cpp" />
+    <ClCompile Include="WNStrip.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="porter2_stemmer.h" />
