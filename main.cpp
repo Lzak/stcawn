@@ -28,19 +28,19 @@ int main() {
 	vector<string> Filtered_WN_Words;				//Will be used for storing filtered WN output words
 	char word[32];									//Array to store user's word
 	char cmd[128] = "wn ";							//Array to store UNIX command
-
-
-
-	/*cout << "Please enter a word: ";
-	cin >> word;									//Retrieving word to use on WordNet
+	
+	//----Obtaining WordNetOutput.txt from WordNet ----
+	cout << "Please enter a word: ";
+	cin >> word;									//Retrieving input word to use on WordNet
 	strcat(cmd, word);
 	strcat(cmd, " -grepn > WordNetOutput.txt");	
 	cout << "Alright, processing word...\n";
-	system(cmd);									//Calling WN command in UNIX*/
+	system(cmd);									//Calling WN command in UNIX
+	//------------------------------------------------
 
 
 
-	//--Stripping WordNetOutput.txt to a list of words---
+	//--Stripping WordNetOutput.txt from redundant text---
 	input.open("WordNetOutput.txt");
 	string tmp;
 
@@ -60,8 +60,6 @@ int main() {
 		Filtered_WN_Words.pop_back();
 	}
 	//---------------------------------------------------
-
-
 
 
 
