@@ -13,7 +13,6 @@
 #include <cstring>
 #include <fstream>
 #include <vector>
-//#include "porter2_stemmer.h"
 
 using namespace std;
 
@@ -22,15 +21,9 @@ extern void WNStrip(string, string);
 
 int main() {
 
-	char word[32] = "";					//Array to store user's WN search word
-	char cmd[128] = "wn ";				//Array to store UNIX command
 	char filename_in[128] = "";			//Array to store the input file name (FROM file)
 	char filename_out[128] = "";		//Array to store the output file name (TO file)
 	ifstream input;
-	ifstream tmp;	//HOTFIX
-	ofstream tmp1;	//HOTFIX
-	string garbage = "asdasd";	//HOTFIX
-	char tmp2 = 10;
 	
 	//------Menu-----------
 	cout << "\n---Short Text Classifier---\n"
@@ -44,43 +37,8 @@ int main() {
 	cout << "Please enter output filename: ";
 	cin >> filename_out;
 
-
-	//----Obtaining WordNetOutput.txt from WordNet ----
-
-	input.open(filename_in);
-	if (!filename_in) {
-		cout << "File input not found, terminating process!";
-		return 0;
-	}
-
-	while (input.peek() != EOF) {
-		cout << "Next letter: " << input.peek() << "\n";
-		//Creating a command string to run through UNIX
-		input >> word;								
-		strcat(cmd, word);										
-		strcat(cmd, " -a -hypon -treen > WN_Output.tmp");
-		cout << cmd << '\n';
-		system(cmd);										//Call the command in UNIX
-		tmp.open("WN_Output.tmp");	//HOTFIX
-		garbage = "~";
-		tmp >> garbage;
-		if (garbage == "~") {
-			cout << "Running if-garbage\n";
-			tmp1.open(filename_out, ios::app);
-			tmp1 << word << "\n-\n";
-			tmp1.close();
-		} else {
-																				
-			WNStrip(filename_out);								//Strip and format WN output
-		}
-		strcpy(cmd, "wn ");
-		strcpy(word, "");
-		tmp.close();
-		cin.get(tmp2);
-															//***FUTURE: Instead of appending to 1 file, seperate into multi files
-															//*****NOTE: I am going to use the LARGE FILE approach on this one
-	}
-	//------------------------------------------------
+	//-------Call to WNStrip---------
+	WNStrip(filename_in, filename_out);
 
 
 	system("pause");
