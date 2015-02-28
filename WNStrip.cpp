@@ -4,17 +4,17 @@
 
 	Description: The functions in this CPP are for stripping
 		the content of the WordNet output when run with the
-		following parameters:
+		following parameters (although theoretically can be
+		used with ANY parameters as long as -a is included):
 
 			$ wn [word] -a -hypon -treen
 
-		After the functions have been executed, the file 
+		After the function have been executed, the file 
 		that was opened will be overwritten with the list
 		of words.
 
-	Usage: WNStrip(
-
-	*Disclaimer: I did this at 1AM, give me a break if this looks sloppy.
+	Usage:	WNStrip(filename)
+			WNStrip(filename, fileOutput)
 */
 
 
@@ -37,7 +37,7 @@ void WNStrip(string read_from_file, string save_as_file) {
 
 	while (!input.eof()) {
 
-		//Search for <noun.blah>
+		//Search for <anything.anything>
 		while (tmp[0] != '<' && !input.eof()) {
 			input.get(tmp[0]);
 		}
@@ -47,7 +47,7 @@ void WNStrip(string read_from_file, string save_as_file) {
 			input.get(tmp[0]);
 		}
 
-		//Begin extacting all words on this line (up until '\n')
+		//Begin extracting all words on this line (up until '\n')
 		tmp[0] = ' ';
 		while (tmp[0] != '\n' && !input.eof()) {
 			input.get(tmp[0]);

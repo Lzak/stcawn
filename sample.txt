@@ -1,6 +1,0 @@
-
-Hyponyms of noun cherry
-
-<noun.plant> cherry, cherry tree
-<noun.plant> wild cherry, wild cherry tree
-

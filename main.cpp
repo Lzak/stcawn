@@ -21,12 +21,21 @@ extern void WNStrip(string, string);
 
 int main() {
 
-	
-	char word[32];									//Array to store user's WN search word
+	char word[32] = "";									//Array to store user's WN search word
 	char cmd[128] = "wn ";							//Array to store UNIX command
+	char file[128] = "";
 	
+	//------Menu-----------
+	cout << "\n---Short Text Classifier---\n"
+		 << "By: Lasha Zakariashvili\n\n"
+		 << "How to use: Have a short list of words ready to be loaded (seperated by spaces)."
+		 << "After the file is processed, it will output another file which compressed the previous file given.\n\n"
+		 << "Please enter filename: ";
+	cin >> file;
+	
+
+
 	//----Obtaining WordNetOutput.txt from WordNet ----
-	cout << "Please enter a word: ";
 	cin >> word;									//Retrieving input word to use on WordNet
 	strcat(cmd, word);								//Creating command that will be ran through UNIX
 	strcat(cmd, " -a -hypon -treen > WordNetOutput.txt");
