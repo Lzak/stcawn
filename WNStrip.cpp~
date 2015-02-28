@@ -36,7 +36,7 @@ void WNStrip(string read_from_file, string save_as_file) {
 		//[ADD EXCEPTION HERE]
 	}
 
-	while (!input.eof() && !((filesize(read_from_file.c_str())-input.tellg()) == 1)) {
+	while (!input.eof() || !((filesize(read_from_file.c_str())-input.tellg()) == 1)) {
 		cout << "1) CURRENT COPRUS POS: " << input.tellg() << '\n';
 		cout << "2) LAST CORPUS POS: " << filesize(read_from_file.c_str()) << '\n';
 		cout << "2a) DIFFERENCE: " << filesize(read_from_file.c_str())-input.tellg() << endl;
