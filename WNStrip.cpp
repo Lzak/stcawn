@@ -24,9 +24,6 @@
 #include <set>
 using namespace std;
 
-void WNStrip(string read_from_file) {
-	WNStrip(read_from_file, read_from_file);
-}
 void WNStrip(string read_from_file, string save_as_file) {
 	set<string> list;				//To temporarily store stripped words
 	ifstream input;					//To read file given and extract words
@@ -69,10 +66,15 @@ void WNStrip(string read_from_file, string save_as_file) {
 	input.close();
 
 	//Export everything stored in list set
-	output.open(save_as_file);
+	output.open(save_as_file, ios::app);
 	for (set<string>::const_iterator i = list.begin(); i != list.end(); i++) {
 		output << *i << '\n';
 	}
+	output << "-\n";
 	output.close();
 	list.clear();
+}
+
+void WNStrip(string read_as_file) {
+	WNStrip("WN_Output.tmp", read_as_file);
 }
