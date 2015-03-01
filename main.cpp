@@ -16,8 +16,8 @@
 
 using namespace std;
 
-extern void WNStrip(string);
-extern void WNStrip(string, string);
+extern void getHypon(string);
+extern void getHypon(string, string);
 
 int main() {
 
@@ -37,9 +37,9 @@ int main() {
 	cout << "Please enter output filename: ";
 	cin >> filename_out;
 
-	//-------Call to WNStrip---------
-	WNStrip(filename_in, filename_out);
-
+	//-------Call to getHypon---------
+	getHypon(filename_in, filename_out);
+	cout << "Done!\n";
 
 	system("pause");
 	return 0;

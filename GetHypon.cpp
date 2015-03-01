@@ -1,10 +1,19 @@
 /*
-	Title: WordNet Text Stripper
+	Title: WordNet Hyponym Extracter
 	Author: Lasha Zakariashvili
 
-	Description: [MUST UPDATE]
+	Description: The main purpose of the function getHypon is to obtain a sample corpus, 
+		then process each individual word through WordNet and temporarily save to 
+		WN_Output.tmp. After this is complete, the function will extract the useful words
+		and place them into a set. Once this is complete, the function will output the 
+		set (starting with the main word) into the specified file.
 
-	Usage:	[MUST UPDATE]
+	Usage:	
+		1) Make sure WordNet is properly installed
+		2) getHypon(read_from_file, save_as_file);  //This will NOT return anything.
+													//File will be produced instead.
+	Exception Codes:
+		[NONE ATM, WILL ADD SOON]
 */
 
 
@@ -16,48 +25,45 @@
 #include <set>
 using namespace std;
 
+//Obtains the file size
 std::ifstream::pos_type filesize(const char* filename) {
 	ifstream in(filename, ifstream::ate | ifstream::binary);
 	return in.tellg();
 }
 
-void WNStrip(string read_from_file, string save_as_file) {
+void getHypon(string read_from_file, string save_as_file) {
 
 	set<string> list;				//To temporarily store stripped words
 	ifstream input;					//To read file given and extract words
 	ofstream output;				//To later output set<string> list
 	char cmd[128] = "";				//Array to store UNIX command
-	char word[32] = "";
-	char tmp[2] = " ";
+	char word[32] = "";				//Array to store stripped words
+	char main_word[32] = "";		//Array to store main word (each word from read_from_file)
+	char tmp[2] = " ";				//Array to append each character
 
 	input.open(read_from_file.c_str());
 	if (!input) {
 		cout << "File input not found, terminating process!";
-		//[ADD EXCEPTION HERE]
+		//******************************* [THROW EXCEPTION HERE]  ***************************** <--
 	}
 
-	while (!input.eof() || !((filesize(read_from_file.c_str())-input.tellg()) == 1)) {
-		cout << "1) CURRENT COPRUS POS: " << input.tellg() << '\n';
-		cout << "2) LAST CORPUS POS: " << filesize(read_from_file.c_str()) << '\n';
-		cout << "2a) DIFFERENCE: " << filesize(read_from_file.c_str())-input.tellg() << endl;
-		//Creating a command string to run through UNIX
-		input >> word;
-		strcpy(cmd, "wn ");
-		strcat(cmd, word);
-		strcat(cmd, " -a -hypon -treen > WN_Output.tmp");
-		cout << cmd << '\n';
-		//WNStrip(output, cmd);
-		system(cmd);
-		cout << "3) WN_Output.tmp Filesize: " << filesize("WN_Output.tmp") << '\n';
+	//----------------------------------------------------------------------------------------
+	//-------------------CREATED + RUNNING COMMAND THROUGH TERMINAL---------------------------
+	//----------------------------------------------------------------------------------------
 
-		if (filesize("WN_Output.tmp") == (static_cast<std::ifstream::pos_type>(0))) {
-			cout << "4a) Went into IF statement\n";
-			list.insert(word);
-		} else {
-			cout << "4b) Went into ELSE statement\n";
+	//while (not at end of file     &&     (read_from_file size) - (stream position) != 1
+	while (!input.eof() && !((filesize(read_from_file.c_str())-input.tellg()) == 1)) {
+		input >> main_word;
+		strcpy(cmd, "wn ");
+		strcat(cmd, main_word);
+		strcat(cmd, " -a -hypon -treen > WN_Output.tmp");
+		//Run command through terminal
+		system(cmd);
+		
 		//----------------------------------------------------------------------------------------
-		//----------------THIS WILL STRIP THE OUTPUT FROM REDUNDANT TEXT--------------------------
+		//---------------------THIS WILL STRIP THE WN OUTPUT AND ADD TO SET-----------------------
 		//----------------------------------------------------------------------------------------
+		if (filesize("WN_Output.tmp") != (static_cast<std::ifstream::pos_type>(0))) {
 			ifstream WN_input("WN_Output.tmp");
 			while (!WN_input.eof()) {
 				//Search for <anything.anything>
@@ -95,8 +101,11 @@ void WNStrip(string read_from_file, string save_as_file) {
 		//-----------------THIS WILL EXPORT THE STIPPED WORDS INTO A CLEAN FILE-------------------
 		//----------------------------------------------------------------------------------------
 		output.open(save_as_file.c_str(), ios::app);
-		for (set<string>::const_iterator i = list.begin(); i != list.end(); i++) {
-			output << *i << '\n';
+		output << main_word << '\n';
+		if (!list.empty()) {
+			for (set<string>::const_iterator i = list.begin(); i != list.end(); i++) {
+				output << *i << '\n';
+			}
 		}
 		output << "-\n";
 		output.close();
@@ -105,10 +114,12 @@ void WNStrip(string read_from_file, string save_as_file) {
 		//----------------------------------------------------------------------------------------
 		//----------------------------------------------------------------------------------------
 		//----------------------------------------------------------------------------------------
-		cout << "5) CURRENT COPRUS POS (end of while): " << input.tellg() << '\n';
 	} //Go back to -> while (!input.eof())
 }
 
-void WNStrip(string read_as_file) {
-	WNStrip(read_as_file, read_as_file);
+/*	[CURRENTLY DISABLED TO PREVENT MISUSE]
+
+void getHypon(string read_as_file) {
+	getHypon(read_as_file, read_as_file);
 }
+*/
