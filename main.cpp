@@ -16,15 +16,17 @@
 
 using namespace std;
 
-extern void getHypon(string);
 extern void getHypon(string, string);
+extern void convertMaster(string);
 
 int main() {
 
 	char filename_in[128] = "";			//Array to store the input file name (FROM file)
 	char filename_out[128] = "";		//Array to store the output file name (TO file)
 	ifstream input;
+	string asd;
 	
+
 	//------Menu-----------
 	cout << "\n---Short Text Classifier---\n"
 		<< "By: Lasha Zakariashvili\n\n"
@@ -33,13 +35,20 @@ int main() {
 		<< "which compressed the previous file given.\n\n"
 
 		<< "Please enter input filename: ";
-	cin >> filename_in;
+	//cin >> asd;
+	/* Commented out to test ConvertMaster.cpp
 	cout << "Please enter output filename: ";
 	cin >> filename_out;
 
+
+
 	//-------Call to getHypon---------
 	getHypon(filename_in, filename_out);
-	cout << "Done!\n";
+	cout << "Hyponyms exported to specified file!\n";
+	*/
+
+	cout << "Okay, here goes nothing:\n";
+	convertMaster("out.txt");
 
 	system("pause");
 	return 0;

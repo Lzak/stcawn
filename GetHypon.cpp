@@ -1,4 +1,5 @@
 /*
+	//----------------------------------------------------------------------------------------
 	Title: WordNet Hyponym Extracter
 	Author: Lasha Zakariashvili
 
@@ -10,10 +11,11 @@
 
 	Usage:	
 		1) Make sure WordNet is properly installed
-		2) getHypon(read_from_file, save_as_file);  //This will NOT return anything.
-													//File will be produced instead.
+		2) getHypon("read_from_file", "save_as_file");  //nothing is return, file is produced
+
 	Exception Codes:
 		[NONE ATM, WILL ADD SOON]
+	//----------------------------------------------------------------------------------------
 */
 
 
