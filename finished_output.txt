@@ -1,0 +1,6 @@
+luminosity
+function
+orange
+luminosity
+bird
+function

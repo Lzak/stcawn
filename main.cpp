@@ -37,11 +37,11 @@ int main() {
 		<< "By: Lasha Zakariashvili\n\n"
 		<< "How to use: Have a short list of words ready to be loaded (seperated\n"
 		<< "by spaces). After the file is processed, it will output another file\n"
-		<< "which compressed the previous file given.\n\n"
+		<< "which compressed the previous file given.\n\n";
 
-		<< "Please enter input filename: ";
+		//<< "Please enter input filename: ";
 	//cin >> filename_in;
-	cout << "Please enter output filename: ";
+	//cout << "Please enter output filename: ";
 	//cin >> filename_out;
 
 

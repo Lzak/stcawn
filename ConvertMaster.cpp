@@ -33,6 +33,7 @@ void convertMaster(string input_file_name) {
 	vector<string>::iterator iter2;				//To iterate through hyponyms
 	string word = "test";
 	int vector_size[2];
+	char garbage;
 	
 
 	ifstream input(input_file_name.c_str());
@@ -46,11 +47,12 @@ void convertMaster(string input_file_name) {
 	//cout << "Filesize: " << filesize(input_file_name.c_str()) << endl;
 	while (input.tellg() >= 0){
 		//cout << "You position is " << input.tellg() << " out of " << filesize(input_file_name.c_str()) << "\n";
-
 		vector<string> tmp_vec;
 		while (input.peek() != list_delim) {
 			getline(input, word, '\n');
 			tmp_vec.push_back(word);
+			cout << "Word: " << word << endl;
+			garbage = input.peek();
 			//cout << "Pushed " << word << " into tmp_vec." << endl;
 		}
 		hypon_list.push_back(tmp_vec);
@@ -68,9 +70,8 @@ void convertMaster(string input_file_name) {
 		}
 	}
 	*/
-
+	cout << ".\n";
 	vector_size[0] = hypon_list.size();
-
 	int i, j;
 	for (i = 1; i < vector_size[0]; i++) {
 		j = 0;
@@ -84,7 +85,7 @@ void convertMaster(string input_file_name) {
 			}
 		}
 	}
-
+	
 	ofstream output("finished_output.txt");
 	vector_size[0] = hypon_list.size();
 	for (int i = 0; i < vector_size[0]; i++) {
