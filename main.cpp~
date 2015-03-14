@@ -26,8 +26,8 @@ char list_delim = '$';
 
 int main() {
 
-	//char filename_in[128] = "";			//Array to store the input file name (FROM file)
-	//char filename_out[128] = "";		//Array to store the output file name (TO file)
+	char filename_in[128] = "";			//Array to store the input file name (FROM file)
+	char filename_out[128] = "";		//Array to store the output file name (TO file)
 	ifstream input;
 	string asd;
 	

@@ -26,7 +26,7 @@
 #include <string>
 #include <set>
 using namespace std;
-extern char list_delim;
+extern char list_delim = '$';
 
 //Obtains the file size
 extern std::ifstream::pos_type filesize(const char* filename);
