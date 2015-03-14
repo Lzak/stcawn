@@ -76,8 +76,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ConvertMaster.cpp" />
-    <ClCompile Include="GetHypon.cpp" />
+    <ClCompile Include="HyponCompressor.cpp" />
+    <ClCompile Include="HyponExtractor.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

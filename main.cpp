@@ -3,7 +3,7 @@
 	Directed By: Dr. Sarah Zelikovitz
 	Author: Lasha Zakariashvili
 
-	Description: A different approach to stripping words (i will come up with better desc. later)
+	Description: One day I'll stop being lazy and actually write a description
 */
 
 //includes needed to compile on UNIX: cstdlib, cstring.
@@ -19,17 +19,16 @@ std::ifstream::pos_type filesize(const char* filename) {
 	ifstream in(filename, ifstream::ate | ifstream::binary);
 	return in.tellg();
 }
-extern void getHypon(string, string);
-extern void convertMaster(string);
+extern void getHypons(string, string);
+extern void compress(string);
 char list_delim = '$';
 
 
 int main() {
 
-	char filename_in[128] = "";			//Array to store the input file name (FROM file)
-	char filename_out[128] = "";		//Array to store the output file name (TO file)
+	char input_file_name[128] = "";			//Array to store the input file name (FROM file)
+	char output_file_name[128] = "";		//Array to store the output file name (TO file)
 	ifstream input;
-	string asd;
 	
 
 	//------Menu-----------
@@ -40,19 +39,16 @@ int main() {
 		<< "which compressed the previous file given.\n\n"
 
 		<< "Please enter input filename: ";
-	cin >> filename_in;
+	cin >> input_file_name;
 	cout << "Please enter output filename: ";
-	cin >> filename_out;
+	cin >> output_file_name;
 
 
 
 	//-------Call to getHypon---------
-	getHypon(filename_in, filename_out);
-	cout << "Hyponyms exported to specified file!\n";
-
-	convertMaster("myOut.txt");
-	cout << "Final file exported!";
-
+	getHypons(input_file_name, output_file_name);
+	compress(output_file_name);
+	cout << "Job complete!\n";
 	system("pause");
 	return 0;
 }
