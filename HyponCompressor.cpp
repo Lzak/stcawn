@@ -50,7 +50,6 @@ void compress(string input_file_name) {
 		while (input.peek() != list_delim) {
 			getline(input, word, '\n');
 			tmp_vec.push_back(word);
-			cout << "Word: " << word << endl;
 		}
 		hypon_list.push_back(tmp_vec);
 		getline(input, word, '\n');		//Collect the useless deliminator
