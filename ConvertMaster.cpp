@@ -45,7 +45,7 @@ void convertMaster(string input_file_name) {
 
 	//this gonna' get messy ;)
 	//cout << "Filesize: " << filesize(input_file_name.c_str()) << endl;
-	while (input.tellg() >= 0){
+	while (input.tellg() < filesize(input_file_name.c_str())){
 		//cout << "You position is " << input.tellg() << " out of " << filesize(input_file_name.c_str()) << "\n";
 		vector<string> tmp_vec;
 		while (input.peek() != list_delim) {
@@ -70,7 +70,6 @@ void convertMaster(string input_file_name) {
 		}
 	}
 	*/
-	cout << ".\n";
 	vector_size[0] = hypon_list.size();
 	int i, j;
 	for (i = 1; i < vector_size[0]; i++) {

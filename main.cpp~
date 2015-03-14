@@ -37,20 +37,21 @@ int main() {
 		<< "By: Lasha Zakariashvili\n\n"
 		<< "How to use: Have a short list of words ready to be loaded (seperated\n"
 		<< "by spaces). After the file is processed, it will output another file\n"
-		<< "which compressed the previous file given.\n\n"
+		<< "which compressed the previous file given.\n\n";
 
-		<< "Please enter input filename: ";
-	//cin >> filename_in;
+		//<< "Please enter input filename: ";
+	cin >> filename_in;
 	cout << "Please enter output filename: ";
-	//cin >> filename_out;
+	cin >> filename_out;
 
 
 
 	//-------Call to getHypon---------
-	//getHypon(filename_in, filename_out);
-	//cout << "Hyponyms exported to specified file!\n";
+	getHypon(filename_in, filename_out);
+	cout << "Hyponyms exported to specified file!\n";
 
 	convertMaster("myOut.txt");
+	cout << "Final file exported!";
 
 	system("pause");
 	return 0;

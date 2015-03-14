@@ -26,8 +26,8 @@ char list_delim = '$';
 
 int main() {
 
-	//char filename_in[128] = "";			//Array to store the input file name (FROM file)
-	//char filename_out[128] = "";		//Array to store the output file name (TO file)
+	char filename_in[128] = "";			//Array to store the input file name (FROM file)
+	char filename_out[128] = "";		//Array to store the output file name (TO file)
 	ifstream input;
 	string asd;
 	
@@ -37,20 +37,21 @@ int main() {
 		<< "By: Lasha Zakariashvili\n\n"
 		<< "How to use: Have a short list of words ready to be loaded (seperated\n"
 		<< "by spaces). After the file is processed, it will output another file\n"
-		<< "which compressed the previous file given.\n\n";
+		<< "which compressed the previous file given.\n\n"
 
-		//<< "Please enter input filename: ";
-	//cin >> filename_in;
-	//cout << "Please enter output filename: ";
-	//cin >> filename_out;
+		<< "Please enter input filename: ";
+	cin >> filename_in;
+	cout << "Please enter output filename: ";
+	cin >> filename_out;
 
 
 
 	//-------Call to getHypon---------
-	//getHypon(filename_in, filename_out);
-	//cout << "Hyponyms exported to specified file!\n";
+	getHypon(filename_in, filename_out);
+	cout << "Hyponyms exported to specified file!\n";
 
 	convertMaster("myOut.txt");
+	cout << "Final file exported!";
 
 	system("pause");
 	return 0;

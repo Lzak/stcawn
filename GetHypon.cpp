@@ -107,7 +107,7 @@ void getHypon(string read_from_file, string save_as_file) {
 				output << *i << '\n';
 			}
 		}
-		output << list_delim;
+		output << list_delim << '\n';
 		output.close();
 		list.clear();
 		remove("WN_Output.tmp");

@@ -1,34 +1,303 @@
-luminosity
-luminance
-luminescence
-luminosity
-luminousness
+red
+Turkey red
+alizarine red
+burgundy
+cardinal
+carmine
+cerise
+cherry
+cherry red
+chrome red
+claret
+crimson
+dark red
+deep red
+fuschia
+loss
+magenta
+maroon
+orange red
+oxblood red
+paper loss
+purplish red
+purplish-red
+red
+red ink
+redness
+ruby
+sanguine
+scarlet
+squeeze
+vermilion
+wine
+wine-colored
+wine-coloured
 $
-function
-sin
-cos
-tan
-calculate
+scarlet
 $
-orange
+vermilion
 $
-light
-priming
-radiance
-radiancy
-ray
-luminance
-traffic light
-yellow light
+crimson
 $
-bird
-feltcher
-parrot
-yourmom
+ruby
 $
-sin
-cos
-math
-tan
-calculate
+cherry
+Catalina cherry
+European bird cherry
+Japanese cherry
+Japanese flowering cherry1
+Japanese flowering cherry2
+Mexican black cherry
+Prunus avium
+Prunus capuli
+Prunus cerasus
+Prunus cerasus austera
+Prunus cerasus caproniana
+Prunus cerasus marasca
+Prunus demissa
+Prunus incisa
+Prunus lyonii
+Prunus padus
+Prunus pensylvanica
+Prunus serotina
+Prunus serrulata
+Prunus sieboldii
+Prunus subhirtella
+Prunus virginiana
+Prunus virginiana demissa
+amarelle
+bing cherry
+bird cherry
+bird cherry tree
+black cherry
+black cherry tree
+blackheart
+blackheart cherry
+capulin
+capulin tree
+cherry
+cherry tree
+chokecherry
+chokecherry tree
+common bird cherry
+flowering cherry
+fuji
+fuji cherry
+gean
+hagberry tree
+heart cherry
+marasca
+marasca cherry
+maraschino cherry
+mazzard
+mazzard cherry
+morello
+oriental cherry
+oxheart
+oxheart cherry
+pin cherry
+rosebud cherry
+rum cherry
+sour cherry
+sour cherry tree1
+sour cherry1
+sweet cherry
+western chokecherry
+wild cherry
+wild cherry tree
+winter flowering cherry
+$
+cerise
+$
+ine
+Bellarmine
+Bellarmino
+Borgia2
+Cardinal Bellarmine
+Cesare Borgia
+Roberto Francesco Romolo Bellarmine
+absolute frequency
+cardinal
+cardinal number
+dean1
+frequency
+googol
+googolplex
+$
+carmine
+$
+wine
+Amontillado
+Beaujolais
+Bordeaux
+Bordeaux wine
+Burgundy
+Burgundy wine
+Cabernet
+Cabernet Sauvignon
+California wine
+Canary wine
+Chablis
+Chardonnay
+Chenin blanc
+Chianti
+Cotes de Provence
+Dubonnet
+French vermouth
+Italian vermouth
+Madeira
+Manzanilla
+Marsala
+Medoc
+Merlot
+Montrachet
+Moselle
+Muscadet
+Pinot Chardonnay
+Pinot blanc
+Pinot noir
+Rhenish
+Rhine wine
+Rhone wine
+Riesling
+Rioja
+Saint Emilion
+Sauterne
+Sauternes
+Sauvignon blanc
+Soave
+Tokay2
+Verdicchio
+Vouvray
+Yquem
+altar wine
+bishop
+blush wine
+bubbly
+champagne
+claret
+cold duck
+dessert wine
+dry vermouth
+fortified wine
+generic
+generic wine
+hock
+jug wine
+liebfraumilch
+macon
+maconnais
+malmsey
+mulled wine
+muscadel2
+muscadelle2
+muscat2
+muscatel2
+negus
+pink wine
+plonk
+port
+port wine
+red Bordeaux
+red wine
+retsina
+rose
+rose wine
+sack
+sacramental wine
+sherry
+sparkling wine
+straw wine
+sweet vermouth
+table wine
+varietal
+varietal wine
+vermouth
+vin ordinaire
+vino
+vintage
+white Burgundy
+white wine
+wine
+zinfandel
+$
+blood-red
+$
+coral
+brain coral
+coral
+gorgonian
+gorgonian coral
+madrepore
+madriporian coral
+mushroom coral
+red coral
+sea fan
+sea feather
+stag's-horn coral
+staghorn coral
+stony coral
+$
+cochineal
+$
+rose
+Bengal rose
+Cherokee rose
+China rose2
+Japanese rose
+Rosa banksia
+Rosa canina
+Rosa chinensis
+Rosa damascena
+Rosa eglanteria
+Rosa laevigata
+Rosa moschata
+Rosa multiflora
+Rosa odorata
+Rosa pendulina
+Rosa spithamaea
+baby rose
+banksia rose
+briar3
+brier3
+damask rose
+dog rose
+eglantine
+ground rose
+mountain rose
+multiflora
+multiflora rose
+musk rose
+old rose
+rose
+rosebush
+rosiness1
+summer damask rose
+sweetbriar
+sweetbrier
+tea rose
+$
+brick-red
+$
+maroon
+$
+rufous
+$
+reddish
+$
+rusty
+$
+cinnamon
+cinnamon
+stick cinnamon
+$
+fulvous
+$
+literarydamask
+$
+vermeil
+$
+sanguine
+$
+rosy
 $
