@@ -1,17 +1,17 @@
 /*
 	//----------------------------------------------------------------------------------------
-	Title: WordNet Hyponym Extracter
+	Title: WordNet Hyponym Extractor
 	Author: Lasha Zakariashvili
 
-	Description: The main purpose of the function getHypon is to obtain a sample corpus, 
-		then process each individual word through WordNet and temporarily save to 
-		WN_Output.tmp. After this is complete, the function will extract the useful words
-		and place them into a set. Once this is complete, the function will output the 
-		set (starting with the main word) into the specified file.
+	Description: The purpose of the function getHypon is to load a sample corpus, then process
+		each individual word through WordNet and temporarily save to WN_Output.tmp. After this 
+		is complete, the function will extract the useful words and place them into a set. 
+		Once this is complete, the function will output the set (starting with the main word) 
+		into the specified file.
 
-	Usage:	
-		1) Make sure WordNet is properly installed
-		2) getHypon("read_from_file", "save_as_file");  //nothing is return, file is produced
+	Usage:	getHypon("read_from_file", "save_as_file");  //nothing is return, file is produced
+
+	**NOTE: Make sure WordNet is properly installed and the PATH is set for terminal to use **
 
 	Exception Codes:
 		[NONE ATM, WILL ADD SOON]
@@ -31,7 +31,7 @@ extern char list_delim;
 //Obtains the file size
 extern std::ifstream::pos_type filesize(const char* filename);
 
-void getHypon(string read_from_file, string save_as_file) {
+void getHypons(string read_from_file, string save_as_file) {
 
 	set<string> list;				//To temporarily store stripped words
 	ifstream input;					//To read file given and extract words

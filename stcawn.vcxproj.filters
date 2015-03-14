@@ -18,10 +18,10 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ConvertMaster.cpp">
+    <ClCompile Include="HyponCompressor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GetHypon.cpp">
+    <ClCompile Include="HyponExtractor.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
