@@ -13,10 +13,13 @@
 #include <cstring>
 #include <fstream>
 #include <vector>
-
 using namespace std;
 
-extern void getHypon(string, string);
+std::ifstream::pos_type filesize(const char* filename) {
+	ifstream in(filename, ifstream::ate | ifstream::binary);
+	return in.tellg();
+}
+//extern void getHypon(string, string);
 extern void convertMaster(string);
 
 int main() {
@@ -48,7 +51,7 @@ int main() {
 	*/
 
 	cout << "Okay, here goes nothing:\n";
-	convertMaster("out.txt");
+	convertMaster("myOut.txt");
 
 	system("pause");
 	return 0;

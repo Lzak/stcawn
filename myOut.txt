@@ -1,0 +1,26 @@
+luminosity
+bright
+shine
+light
+$
+function
+math
+sin
+cos
+tan
+$
+light
+bright
+shine
+$
+apple
+fruit
+$
+cos
+math
+calculate
+$
+orange
+vitamin C
+fruit
+$

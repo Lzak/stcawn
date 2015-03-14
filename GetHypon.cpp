@@ -26,12 +26,10 @@
 #include <string>
 #include <set>
 using namespace std;
+char list_delim = '$';
 
 //Obtains the file size
-std::ifstream::pos_type filesize(const char* filename) {
-	ifstream in(filename, ifstream::ate | ifstream::binary);
-	return in.tellg();
-}
+extern std::ifstream::pos_type filesize(const char* filename);
 
 void getHypon(string read_from_file, string save_as_file) {
 
@@ -109,7 +107,7 @@ void getHypon(string read_from_file, string save_as_file) {
 				output << *i << '\n';
 			}
 		}
-		output << "-\n";
+		output << list_delim << "\n";
 		output.close();
 		list.clear();
 		remove("WN_Output.tmp");
