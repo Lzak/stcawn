@@ -1,3 +1,5 @@
+/* This is still Claudia's code, I just cleaned up the formatting from "littleAPI.php" */
+
 <meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <?php
 	echo "<h1>ANALYSIS</h1>";
