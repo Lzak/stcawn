@@ -2,7 +2,7 @@
 /*
 	Title: Tweet Puller
 	Authors:	Lasha Zakariashvili
-				Claudia Bergeron
+			Claudia Bergeron
 
 	Description: Pull tweets from the Twitter Stream API. 
 	
