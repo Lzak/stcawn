@@ -14,7 +14,7 @@ require_once('phirehose/Phirehose.php');
 require_once('phirehose/OauthPhirehose.php');
 
 /* -=-V-=-V-=-V-=-V-=-=- Twitter Keys go here -=-=-V-=-V-=-V-=-V-=- */
-/*								    */
+/*								    */ 
 /* 	    	    "Twitter Keys (encrypted).txt"   		    */
 /*		    Note: Won't work without them.   		    */
 /*								    */
