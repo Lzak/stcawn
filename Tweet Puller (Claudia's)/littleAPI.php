@@ -7,10 +7,10 @@ include('clear_stop_words_fn.php');
 $user = $_POST['user'];
 $number = $_POST['number'];
 $settings = array(
-'oauth_access_token'=> "3043501246-7orEMGioYBrRlhENUFYMLpK9epQMgicagID4xDC",
-'oauth_access_token_secret'=>"26pFe9e7y5790tuIhDeUKmospxabYvTHzJC60Z1p7KqTU",
-'consumer_key'=>"kQbcxjPgKj8KEBfRXs0jHa9m1",
-'consumer_secret'=>"XayolKKs5fzb1qBbeUafBW3FhWfvUI2TquUhKZIB0PkZC7QKi7");
+'oauth_access_token'=> "**************************************************",
+'oauth_access_token_secret'=>"*********************************************",
+'consumer_key'=>"*************************",
+'consumer_secret'=>"**************************************************");
 
 $url = "https://api.twitter.com/1.1/statuses/user_timeline.json";
 $requestMethod = "GET";
