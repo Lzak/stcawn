@@ -2,7 +2,6 @@
 /*
 	Title: Tweet Puller
 	Authors:	Lasha Zakariashvili
-				Claudia Bergeron
 				
 	Credits:	fennb (https://github.com/fennb/phirehose)
 
@@ -63,16 +62,22 @@ class TweetPuller extends OauthPhirehose {
 	public function enqueueStatus($status) {
 		if (time() - $this->time_start < $this->run_duration) {
 			$data = json_decode($status, true);
-			if (is_array($data) && isset($data['user']['screen_name']) && isset($data['text']) && $data['lang'] == "en") {
+			if (is_array($data) && isset($data['user']['screen_name']) && isset($data['text'])) {
 				//This will output =>    <user>:TwitterName<tweet>:MyTwitterMessage\n
 				fwrite($this->getFile(), '<user>:' . $data['user']['screen_name'] . '<tweet>:' . urldecode($data['text']) . '<eo_tweet>' . "\n");
 				$this->closeFile();
 			}
+		} else {
+			$this->disconnect();
 		}
 	}
 }
 
 // Start streaming
+echo "Initializing Tweet Puller...<br>";
 $engine = new TweetPuller(5);
-$engine->consume();
+$engine->setLang("en");			//Only pull English tweets
+echo "Tweet Puller started.<br>";
+$engine->consume();				//Starts the tweet pull
+echo "Tweet Pull complete.<br>";
 ?>
