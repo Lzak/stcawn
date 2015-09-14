@@ -15,7 +15,9 @@
 			2) Create class:	$var = new TweetPuller(duration_in_seconds);
 			3) Call consume():	$var->consume();
 	
-	Notes:	- Tweets are put into a file called "Tweets.txt"
+	Notes:	- ONLY ENGLISH TWEETS ARE DISPLAYED! To remove this restriction, simply delete
+				"&& $data['lang'] == "en"" from enqueueStatus($status).
+			- Tweets are put into a file called "Tweets.txt"
 			- The text format is as so:
 				>>>	<user>:TWITTER_NAME<tweet>:TWEET_MESSAGE<eo_tweet>\n
 			- Keep in mind, people tend to post tweets with more than 1 line, which might
@@ -27,7 +29,7 @@
 require_once('phirehose/Phirehose.php');
 require_once('phirehose/OauthPhirehose.php');
 
-// OAuth for Twitter (YOU MUST ENTER SOME SET OF KEYS OR THIS WILL NOT WORK!!)
+// OAuth for Twitter
 define("TWITTER_CONSUMER_KEY", "XXXXXXXXXXXXXXXXXXXXXXXX");
 define("TWITTER_CONSUMER_SECRET", "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
 define("OAUTH_TOKEN", "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
@@ -61,7 +63,7 @@ class TweetPuller extends OauthPhirehose {
 	public function enqueueStatus($status) {
 		if (time() - $this->time_start < $this->run_duration) {
 			$data = json_decode($status, true);
-			if (is_array($data) && isset($data['user']['screen_name']) && isset($data['text'])) {
+			if (is_array($data) && isset($data['user']['screen_name']) && isset($data['text']) && $data['lang'] == "en") {
 				//This will output =>    <user>:TwitterName<tweet>:MyTwitterMessage\n
 				fwrite($this->getFile(), '<user>:' . $data['user']['screen_name'] . '<tweet>:' . urldecode($data['text']) . '<eo_tweet>' . "\n");
 				$this->closeFile();
