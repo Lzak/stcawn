@@ -1,7 +1,7 @@
 <?php
 /*
 	Title: Tweet Puller
-	Authors:	Lasha Zakariashvili
+	Author:	Lasha Zakariashvili
 				
 	Credits:	fennb (https://github.com/fennb/phirehose)
 
