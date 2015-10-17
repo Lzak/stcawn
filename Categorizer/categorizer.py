@@ -5,7 +5,7 @@ Description: The purpose of this script is to take a corpus (each element sepera
 	a newline (\n) and output a "category.data" file which prints the category of each
 	element seperated by a space.
 	
-Usage:	
+Usage:	categorizer.py (optional: -v for verbose mode) [training corpus location] [test corpus location]
 '''
 
 import sys
