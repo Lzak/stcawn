@@ -1,11 +1,31 @@
 '''
-Title: Gender Classifier
+Title: Build Classifier
 Author: Lasha Zakariashvili
+
 Description: The purpose of this script is to take an already labeled set of training
 	data and have the machine learn it (applying Naive Bayes) and then exporting the
-	classifier to the specified filename.
+	classifier (with the vectorized training set) into a specified folder.
 	
-Usage:	categorizer.py [-v(erbose)] [training_corpus_location] [output_name]
+Usage:	categorizer.py [-v(erbose)] [training_corpus_location] [output_folder_name]
+
+	1) Make sure to have a training corpus. It must be structured as so:
+		Root_Folder/
+			Category1/			**The name of the Root_Folder and data files does NOT
+				data1			make any kind of difference. BE SURE to name the category
+				data2			of the folder correctly, as this is where the classifier
+				...				will pull the name of the category!
+				dataX
+			Category2/			**If you have no clue what I'm talking about, please see:
+				data1			http://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_files.html
+				data2
+				...
+				dataX
+			
+	2) Run the classifier through python with the following parameters:
+		[optional -v(erbose)] [training_corupus_location] [output_folder_name]
+	
+		so for example:
+			$ python build_classifier.py -v training-set classifier
 '''
 
 import sys

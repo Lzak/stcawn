@@ -1,11 +1,29 @@
 '''
-Title: Gender Classifier
+Title: Classify
 Author: Lasha Zakariashvili
-Description: The purpose of this script is to take a corpus (each element seperated by
-	a newline (\n) and output a "category.data" file which prints the category of each
-	element seperated by a space.
+
+Description: The purpose of this script is to use the classifier that was built from
+	build_classifier.py and apply it's prediction to a dataset. The output will be in
+	a integer referring to a category (which will be labeled in the output).
 	
 Usage:	classify.py [-v(erbose)] [classifier_folder] [dataset_file] [output_prediction]
+
+	1) Be sure that you have an exported classifier folder from build_classifier.py, 
+		otherwise this will not work as this does NOT train a classifier.
+		
+		You will also need a dataset to classify. Although the naming does not matter,
+		please be sure to separate each string of text you wish to classify with a newline
+		(\n). So for example:
+			
+			\dataset.txt:
+				my first string of text i wish to classify
+				another line of text i wish to classify
+				yet another line of text to classify
+				
+	2) Here is an example, classifier_folder being my exported folder from 
+		build_classifier.py and dataset.txt being the document I wish to classify
+		
+			$ python classify -v classifier_folder dataset.txt output.txt
 '''
 
 import sys
