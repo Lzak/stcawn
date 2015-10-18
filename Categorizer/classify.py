@@ -5,7 +5,7 @@ Description: The purpose of this script is to take a corpus (each element sepera
 	a newline (\n) and output a "category.data" file which prints the category of each
 	element seperated by a space.
 	
-Usage:	classifier.py [-v(erbose)] [classifier_folder] [dataset_file] [output_prediction]
+Usage:	classify.py [-v(erbose)] [classifier_folder] [dataset_file] [output_prediction]
 '''
 
 import sys
@@ -75,7 +75,7 @@ try:
 		output_name = sys.argv[3]
 except IndexError:
     print "[ERROR] Invalid arguments passed!"
-    print "[HINT] classifier.py [-v(erbose)] [classifier_folder] [dataset_file] [output_name]"
+    print "[HINT] classify.py [-v(erbose)] [classifier_folder] [dataset_file] [output_name]"
     sys.exit()
 except ValueError as err:
     print ("[ERROR] %r" % (err.args))
